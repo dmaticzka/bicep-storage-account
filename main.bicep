@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param storageAccountName string = 'ruvtfstorage${uniqueString(resourceGroup().id)}'
+param storageAccountName string = 'ruvtfstore${uniqueString(resourceGroup().id)}'
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: storageAccountName
