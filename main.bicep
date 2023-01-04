@@ -13,8 +13,8 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   }
   kind: 'StorageV2'
   properties:{
-    accessTier: 'Cool'
-    allowBlobPublicAccess: false
+    accessTier: 'Hot'
+    //allowBlobPublicAccess: false
     minimumTlsVersion: 'TLS1_2'
     publicNetworkAccess: 'Disabled'
   }
@@ -23,7 +23,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
 // create blob container within the storage account
 resource storageContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-09-01' = {
   name: '${storageAccount.name}/default/tfcontainer'
-  properties: {
+/*   properties: {
     publicAccess: 'None'
-  }
+  } */
 }

@@ -11,7 +11,15 @@ az group create --name $RESOURCE_GROUP --location westeurope
 # deploy at the resource group level
 az deployment group create \
   --template-file main.bicep \
-  --resource-group $RESOURCE_GROUP
+  --resource-group $RESOURCE_GROUP --what-if
+```
+
+## Access
+
+IP-Adresse des Accounts kann mit folgendem Befehl herausgefunden werden. Bei funktionierendem Private Endpoint aus dem freigeschalteten Subnetz heraus, sollte die private IP des Endpoints geliefert werden.
+
+```bash
+getent hosts ruvtfstorex67pqnff5glo4.blob.core.windows.net
 ```
 
 ## Undeploy
@@ -30,3 +38,5 @@ az deployment group delete \
   --name main \
   --resource-group bicep-storage-account
 ```
+
+### Dokumentation
