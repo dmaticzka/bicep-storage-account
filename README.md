@@ -38,5 +38,3 @@ az deployment group delete \
   --name main \
   --resource-group bicep-storage-account
 ```
-
-### Dokumentation
