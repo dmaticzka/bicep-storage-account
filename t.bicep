@@ -1,34 +1,3 @@
-
-
-
-
-
-// the private endpoint to access the storage account
-resource privateEndpoint 'Microsoft.Network/privateEndpoints@2021-05-01' = {
-  name: privateEndpointName
-  location: location
-  properties: {
-    subnet: {
-      id: subnet.id
-    }
-    privateLinkServiceConnections: [
-      {
-        name: privateEndpointName
-        properties: {
-          // TODO: is this modification for storage account correct?
-          privateLinkServiceId: storageAccount.id
-          groupIds: [
-            'storageAccount'
-          ]
-        }
-      }
-    ]
-  }
-  dependsOn: [
-    vnet
-  ]
-}
-
 // the dns zone that is used to resolve the private endpoint IP address
 resource privateDnsZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
   name: privateDnsZoneName
