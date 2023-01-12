@@ -52,6 +52,7 @@ resource subnet 'Microsoft.Network/virtualNetworks/subnets@2021-05-01' = {
   properties: {
     addressPrefix: subnet1Prefix
     // TODO: what does this do?
+    // "Enable or Disable apply network policies on private end point in the subnet." - https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks?pivots=deployment-language-bicep
     privateEndpointNetworkPolicies: 'Disabled'
   }
 }
