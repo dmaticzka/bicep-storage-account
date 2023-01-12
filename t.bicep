@@ -1,15 +1,7 @@
 
 
 
-resource subnet 'Microsoft.Network/virtualNetworks/subnets@2021-05-01' = {
-  parent: vnet
-  name: subnet1Name
-  properties: {
-    addressPrefix: subnet1Prefix
-    // TODO: what does this do?
-    privateEndpointNetworkPolicies: 'Disabled'
-  }
-}
+
 
 // the private endpoint to access the storage account
 resource privateEndpoint 'Microsoft.Network/privateEndpoints@2021-05-01' = {

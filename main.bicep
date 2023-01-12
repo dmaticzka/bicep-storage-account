@@ -45,3 +45,13 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-05-01' = {
     }
   }
 }
+
+resource subnet 'Microsoft.Network/virtualNetworks/subnets@2021-05-01' = {
+  parent: vnet
+  name: subnet1Name
+  properties: {
+    addressPrefix: subnet1Prefix
+    // TODO: what does this do?
+    privateEndpointNetworkPolicies: 'Disabled'
+  }
+}
