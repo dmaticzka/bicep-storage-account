@@ -5,8 +5,9 @@ Setup and secure an Azure Storage Account using Bicep
 ## Deploy
 
 ```bash
-RESOURCE_GROUP=bicep-storage-account
 # create the resource group
+# this is done at the subscription level, so using bicep would require a separate script
+RESOURCE_GROUP=bicep-storage-account
 az group create --name $RESOURCE_GROUP --location westeurope
 # deploy at the resource group level
 az deployment group create \
