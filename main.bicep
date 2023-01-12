@@ -70,9 +70,11 @@ resource privateEndpoint 'Microsoft.Network/privateEndpoints@2021-05-01' = {
         name: privateEndpointName
         properties: {
           // TODO: is this modification for storage account correct?
+          // "The resource id of private link service." - https://learn.microsoft.com/en-us/azure/templates/microsoft.network/privateendpoints?pivots=deployment-language-bicep
           privateLinkServiceId: storageAccount.id
+          // "The ID(s) of the group(s) obtained from the remote resource that this private endpoint should connect to" - https://learn.microsoft.com/en-us/azure/templates/microsoft.network/privateendpoints?pivots=deployment-language-bicep
           groupIds: [
-            'storageAccount'
+            'blob'
           ]
         }
       }
