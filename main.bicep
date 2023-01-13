@@ -6,8 +6,8 @@ var vnetAddressPrefix = '10.0.0.0/16'
 var subnet1Prefix = '10.0.0.0/24'
 var subnet1Name = 'subnet-for-private-endpoint'
 var privateEndpointName = 'private-endpoint-for-storage-account'
-// evaluates to "privatelinkzone.blob.core.windows.net"
-var privateDnsZoneName = 'privatelinkzone.blob.${environment().suffixes.storage}'
+// evaluates to "privatelink.blob.core.windows.net"
+var privateDnsZoneName = 'privatelink.blob.${environment().suffixes.storage}'
 var pvtEndpointDnsGroupName = '${privateEndpointName}/mydnsgroupname'
 
 // create publicly inaccessible storage account

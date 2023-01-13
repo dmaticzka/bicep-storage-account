@@ -20,7 +20,10 @@ az deployment group create \
 IP-Adresse des Accounts kann mit folgendem Befehl herausgefunden werden. Bei funktionierendem Private Endpoint aus dem freigeschalteten Subnetz heraus, sollte die private IP des Endpoints geliefert werden.
 
 ```bash
+# resource group bicep-storage-account
 getent hosts ruvtfstorex67pqnff5glo4.blob.core.windows.net
+# resource group bicep-storage-account2
+getent hosts ruvtfstore67t6qcq456z5y.blob.core.windows.net
 ```
 
 ## Undeploy
