@@ -1,5 +1,5 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - before: sudo apt -y install azure-cli
+  - before: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
     init: echo "this is the prebuild"
     command: echo 'start script'
